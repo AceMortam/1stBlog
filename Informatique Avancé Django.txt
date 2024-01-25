@@ -1,0 +1,57 @@
+Informatique Avancé Django
+Toutes les Commandes se font dans le même dossier
+
+Créer un Environement Virtuel (VE) :
+python -m venv "NameVE"
+
+Activer le VE :
+"NameVE"/Scripts/activate
+
+Créer un projet :
+django-admin.exe startproject "NameSite" .
+(le . est important)
+
+In "NameSite"/settings.py :
+TIME_ZONE = 'Europe/Paris'
+LANGUAGE_CODE = 'fr-FR'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
+
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+Créer une base de données:
+python manage.py migrate
+
+Démarrer le serveur local:
+python manage.py runserver
+
+Créer une application :
+python manage.py startapp "blog"
+
+Créer un model de post pour blog:
+Voir blog/models.py
+
+Ajouter les modèles dans la base de données:
+python manage.py makemigrations blog
+python manage.py migrate blog
+
+Créer un super utilisateur:
+python manage.py createsuperuser
+
+Démarrer le répertoire Git:
+git init
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+git status
+
+git add
+git commit -m "My App, first commit"
