@@ -55,3 +55,8 @@ git status
 
 git add
 git commit -m "My App, first commit"
+
+PythonAnywhere
+pip3.8 install --user pythonanywhere
+
+pa_autoconfigure_django.py --python=3.8 https://github.com/<your-github-username>/my-first-blog.git
