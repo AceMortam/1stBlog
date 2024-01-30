@@ -7,21 +7,12 @@
         <header>
             <h1><a href="/">Ace of Wrestling Blog</a></h1>
         </header>
-
-        <article>
-            <time>published: 25.01.2024 10:58</time>
-            <h2><a href="">AEW Dynamite</a></h2>
-            <p>
-			Dans la nuit du mercredi 24 janvier au jeudi 25 janvier s'est tenu le show hebdomadaire All Elite Wrestling Dynamite.
-			</p>
-        </article>
-
-        <article>
-            <time>published: 25.01.2024 11:00</time>
-            <h2><a href="">WWE Royal Rumble</a></h2>
-            <p>
-			Le Royal Rumble se déroulera dans la nuit du samedi 27 janvier au dimanche 28 janvier au Tropicana Field, Tampa Bay, Floride.
-			</p>
-        </article>
+        {% for post in posts %}
+    <article>
+        <time>published: {{ post.published_date }}</time>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </article>
+        {% endfor %}
     </body>
 </html>
